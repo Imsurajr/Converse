@@ -6,7 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 final _firestore = FirebaseFirestore.instance;
 User? loggedInUser;
-
+String timelapse="";
 class ChatScreen extends StatefulWidget {
   @override
   static const String cid = "chat_screen";
@@ -97,19 +97,11 @@ class _ChatScreenState extends State<ChatScreen> {
                       ),
                       onPressed: () {
                         messageTextController.clear();
-                        _firestore.collection('messages')
-                            //     .doc(
-                            //   DateTime.now().millisecondsSinceEpoch.toString(),
-                            // ).set({
-                            //   'text': messageText,
-                            //   'sender': loggedInUser?.email,
-                            // });
-                            .add(
-                          {
-                            'text': messageText,
-                            'sender': loggedInUser?.email,
-                          },
-                        );
+                        _firestore.collection('messages').add({
+                          timelapse = 'timestamp':FieldValue.serverTimestamp(),
+                          'text': messageText,
+                          'sender': loggedInUser?.email,
+                        });
                       },
                       child: Text(
                         'Send',
@@ -131,6 +123,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
 class MessageStream extends StatelessWidget {
   @override
+
+
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: _firestore.collection('messages').snapshots(),
@@ -141,8 +135,8 @@ class MessageStream extends StatelessWidget {
               color: Colors.white,
             ),
           );
-        }
-        ;
+        };
+
         final messages = snapshot.data!.docs.reversed;
         List<MessageBubble> messageBubbles = [];
         for (var message in messages) {
@@ -155,6 +149,7 @@ class MessageStream extends StatelessWidget {
             isCurrentUser: messageSender == loggedInUser?.email,
           );
           messageBubbles.insert(0, messageBubble);
+
         }
         return Expanded(
           child: ListView.builder(
@@ -177,6 +172,8 @@ class MessageBubble extends StatelessWidget {
   bool isCurrentUser;
   String sender;
   String text;
+
+  DateTime get timestamp => timestamp;
 
   @override
   Widget build(BuildContext context) {
