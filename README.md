@@ -1,3 +1,3 @@
 # converse
 
-I created a new Chat App using Flutter and it is using Firebase as backend too.
+I created a new Chat App using Flutter that uses Firebase as its backend.
