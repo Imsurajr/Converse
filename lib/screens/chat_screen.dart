@@ -119,6 +119,7 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
     );
   }
+
 }
 
 class MessageStream extends StatelessWidget {
