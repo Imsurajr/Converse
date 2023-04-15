@@ -67,7 +67,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       " Converse",
                       speed: (Duration(milliseconds: 90)),
                       textStyle: GoogleFonts.cabin(
-                        fontSize: 45.0,
+                        fontSize: 46.0,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
