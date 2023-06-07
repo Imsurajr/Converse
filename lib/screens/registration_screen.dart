@@ -81,7 +81,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               email: email!, password: password!);
 
                       if (newUser != null) {
-                        //if user registers bnack
+                        //if user registers back
                         Navigator.pushNamed(context, ChatScreen.cid);
                       }
 
@@ -91,7 +91,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     } catch (e) {
                       print(e);
                     }
-                  }),
+                  }
+                  ),
             ],
           ),
         ),

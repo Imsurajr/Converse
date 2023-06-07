@@ -18,7 +18,7 @@ class ConVerse extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         textTheme: TextTheme(
-          bodyText1: TextStyle(color: Colors.black54),
+          bodyLarge: TextStyle(color: Colors.black54),
         ),
       ),
       initialRoute: WelcomeScreen.wid,

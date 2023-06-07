@@ -9,7 +9,7 @@ User? loggedInUser;
 String timelapse="";
 class ChatScreen extends StatefulWidget {
   @override
-  static const String cid = "chat_screen";
+  static  String cid = "chat_screen";
 
   _ChatScreenState createState() => _ChatScreenState();
 }
