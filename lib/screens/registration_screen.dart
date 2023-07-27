@@ -66,7 +66,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ),
               ),
               SizedBox(
-                height: 24.0,
+                height: 25.0,
               ),
               RoundedButton(
                   text: "Register",
