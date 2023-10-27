@@ -15,6 +15,7 @@ class ConVerse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      //this feature has been added to close the keyboard when the user taps outside on the screen.
       onTap: () {
         FocusManager.instance.primaryFocus?.unfocus();
       },
