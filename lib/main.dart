@@ -14,20 +14,25 @@ Future main() async {
 class ConVerse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        textTheme: TextTheme(
-          bodyLarge: TextStyle(color: Colors.black54),
-        ),
-      ),
-      initialRoute: WelcomeScreen.wid,
-      routes: {
-        WelcomeScreen.wid: (context) => WelcomeScreen(),
-        LoginScreen.lid: (context) => LoginScreen(),
-        RegistrationScreen.rid: (context) => RegistrationScreen(),
-        ChatScreen.cid: (context) => ChatScreen(),
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
       },
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.dark().copyWith(
+          textTheme: TextTheme(
+            bodyLarge: TextStyle(color: Colors.black54),
+          ),
+        ),
+        initialRoute: WelcomeScreen.wid,
+        routes: {
+          WelcomeScreen.wid: (context) => WelcomeScreen(),
+          LoginScreen.lid: (context) => LoginScreen(),
+          RegistrationScreen.rid: (context) => RegistrationScreen(),
+          ChatScreen.cid: (context) => ChatScreen(),
+        },
+      ),
     );
   }
 }
