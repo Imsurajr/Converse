@@ -64,7 +64,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   animatedTexts: [
                     TypewriterAnimatedText(
                       //   WavyAnimatedText(
-                      " Converse",
+                      "Converse",
                       speed: (Duration(milliseconds: 90)),
                       textStyle: GoogleFonts.cabin(
                         fontSize: 46.0,
