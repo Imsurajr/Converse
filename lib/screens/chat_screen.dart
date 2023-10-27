@@ -104,7 +104,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         });
                       },
                       child: Text(
-                        'Send',
+                        'Send ',
                         style: kSendButtonTextStyle.copyWith(
                           color: Colors.white,
                         ),
