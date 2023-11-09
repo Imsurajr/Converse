@@ -124,8 +124,6 @@ class _ChatScreenState extends State<ChatScreen> {
 
 class MessageStream extends StatelessWidget {
   @override
-
-
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: _firestore.collection('messages').orderBy('timestamp' , descending: true).snapshots(),
@@ -150,7 +148,6 @@ class MessageStream extends StatelessWidget {
             isCurrentUser: messageSender == loggedInUser?.email,
           );
           messageBubbles.insert(0, messageBubble);
-
         }
         return Expanded(
           child: ListView.builder(
